@@ -6,11 +6,10 @@ body{
     position: relative;
     width: 49%;
     margin: auto;
-    transform-origin: bottom center;
+    transform-origin: center bottom;
     transform: rotate(0deg);
     z-index: 1;
     height: 49%;
-    transition:  1s linear;
     /*animation:rotate 60s linear infinite;*/
   }
   
