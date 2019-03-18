@@ -1,6 +1,10 @@
 body{
     background-color: #29B6F6
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 #sun {
     top: 1%;
     position: relative;
