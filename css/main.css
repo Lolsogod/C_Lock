@@ -1,56 +1,49 @@
-body{
-    background-color: #42A5F5
+body {
+  background-color: #42A5F5
 }
-html, body {
+
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
-#sun {
-    top: 1%;
-    position: relative;
-    width: 49%;
-    margin: auto;
-    transform-origin: center bottom;
-    transform: rotate(0deg);
-    z-index: 1;
-    height: 49%;
-    /*animation:rotate 60s linear infinite;*/
-  }
-  
-  #sun::after{
-    content: '';
-    left: 40%;
-    position: absolute;
-    height: 20%;
-    width: 20%;
-    top: -12%;
-    border-radius: 100%; 
-    background: rgb(255, 237, 75);
-  }
-  
-  /*@keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-  }*/
 
-  #clok{
-    font-family: sans-serif;
-    color:white;
-    position:relative;
-    font-size: 10vmin;
-    top: -8%;
-    left: 32%;
-    margin: auto;
-  }
-  #clock{
-    border-radius: 100%;
-    border-color: white;
-    border-style: dashed;
-    border-width: 0.3vmin;;
-  }
-span{
-  font-size: 5vmin;
+#sun {
+  top: 1%;
+  position: relative;
+  width: 49%;
+  margin: auto;
+  transform-origin: center bottom;
+  transform: rotate(0deg);
+  z-index: 1;
+  height: 49%;
 }
 
-  
+#sun::after {
+  content: '';
+  left: 40%;
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  top: -12%;
+  border-radius: 100%;
+  background: rgb(255, 237, 75);
+}
+
+#clok {
+  font-family: sans-serif;
+  color: white;
+  position: relative;
+  font-size: 10vmin;
+  top: -8%;
+  left: 32%;
+  margin: auto;
+}
+
+#clock {
+  border-radius: 100%;
+  border-color: white;
+  border-style: dashed;
+  border-width: 0.3vmin;
+  ;
+}
