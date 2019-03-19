@@ -1,6 +1,17 @@
-let HouMin = 0;
+let HouMin = 0,
+    theme = document.querySelector("#mode"),
+change = () =>{
+    
+    if(theme.getAttribute("href") == "css/day.css"){
+        document.querySelector("#sw").className = "far fa-sun";
+        theme.setAttribute("href", "css/night.css");
+    }else{
+        document.querySelector("#sw").className = "far fa-moon"
+        theme.setAttribute("href", "css/day.css");
+    }
+}
 
-const clock = () => {
+clock = () => {
     let date = new Date(),
         hours = date.getHours(),
         minutes = date.getMinutes();

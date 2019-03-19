@@ -1,9 +1,6 @@
-body {
-  background-color: #42A5F5
-}
-
 html,
 body {
+  transition: background 1s;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -20,6 +17,7 @@ body {
 }
 
 #sun::after {
+  transition: background 1s;
   content: '';
   left: 40%;
   position: absolute;
@@ -27,7 +25,6 @@ body {
   width: 20%;
   top: -12%;
   border-radius: 100%;
-  background: rgb(255, 237, 75);
 }
 
 #clok {
@@ -43,7 +40,14 @@ body {
 #clock {
   border-radius: 100%;
   border-color: white;
-  border-style: dashed;
+  border-style: solid;
   border-width: 0.3vmin;
-  ;
+}
+i{
+  opacity: 0.5;
+  color: white;
+  transition: 0.5s;
+}
+i:hover{
+  opacity: 1;
 }

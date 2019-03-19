@@ -1,0 +1,6 @@
+body {
+    background-color: #42A5F5
+  }
+#sun::after {
+    background: rgb(255, 237, 75);
+}
