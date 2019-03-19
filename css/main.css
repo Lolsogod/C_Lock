@@ -43,11 +43,13 @@ body {
   border-style: solid;
   border-width: 0.3vmin;
 }
-i{
+
+i {
   opacity: 0.5;
   color: white;
   transition: 0.5s;
 }
-i:hover{
+
+i:hover {
   opacity: 1;
 }

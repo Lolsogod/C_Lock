@@ -1,11 +1,13 @@
 let HouMin = 0,
     theme = document.querySelector("#mode"),
-change = () =>{
-    
-    if(theme.getAttribute("href") == "css/day.css"){
+    switcher = document.querySelector("#sw");
+
+change = () => {
+
+    if (theme.getAttribute("href") == "css/day.css") {
         document.querySelector("#sw").className = "far fa-sun";
         theme.setAttribute("href", "css/night.css");
-    }else{
+    } else {
         document.querySelector("#sw").className = "far fa-moon"
         theme.setAttribute("href", "css/day.css");
     }
@@ -15,7 +17,6 @@ clock = () => {
     let date = new Date(),
         hours = date.getHours(),
         minutes = date.getMinutes();
-
     if (hours < 10)
         hours = "0" + hours;
     if (minutes < 10)
@@ -43,3 +44,9 @@ window.requestAnimFrame = (() => {
             draw();
         })();
 })();
+
+let date = new Date(),
+    h = date.getHours();
+if (h > 19 || h < 6) {
+    change()
+}
