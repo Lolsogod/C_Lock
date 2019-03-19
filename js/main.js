@@ -1,9 +1,9 @@
 let HouMin = 0;
 
 const clock = () => {
-    let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+    let date = new Date(),
+        hours = date.getHours(),
+        minutes = date.getMinutes();
 
     if (hours < 10)
         hours = "0" + hours;
@@ -15,28 +15,20 @@ const clock = () => {
     Timer = setTimeout("clock()", 1000);
 }
 
-window.requestAnimFrame = (function () {
-    return window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        function (callback) {
-            window.setTimeout(callback, 1000 / 60);
-        };
+window.requestAnimFrame = (() => {
+    return window.requestAnimationFrame
 })();
 
-(function clock() {
-    (function loop() {
-        requestAnimFrame(loop);
-        draw();
-    })();
-
-    function draw() {
-        var now = new Date(), //now
-            then = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0),
-            diffInMil = (now.getTime() - then.getTime()),
-            h = (diffInMil / (1000 * 60 * 60)),
-            m = (h * 60),
-            s = (m * 60);
-        document.getElementById("sun").style.webkitTransform = "rotate(" + (s * 6) + "deg)";
-    }
+(() => {
+    draw = () => {
+            let now = new Date(),
+                then = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0),
+                diffInMil = (now.getTime() - then.getTime()),
+                s = (diffInMil / 1000);
+            document.getElementById("sun").style.transform = `rotate(${(s * 6)}deg)`;
+        }
+        (loop = () => {
+            requestAnimFrame(loop);
+            draw();
+        })();
 })();
