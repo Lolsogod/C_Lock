@@ -22,7 +22,7 @@ clock = () => {
     if (minutes < 10)
         minutes = "0" + minutes;
 
-    HouMin = hours + ":" + minutes;
+    HouMin = `${hours}:${minutes}`;
     document.getElementById("clok").innerHTML = HouMin;
     Timer = setTimeout("clock()", 1000);
 }
