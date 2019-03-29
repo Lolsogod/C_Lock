@@ -1,30 +1,32 @@
+/* eslint-disable no-undef */
+
 let HouMin = 0,
-    theme = document.querySelector("#mode");
-    
-let change = () => {
+    theme = document.querySelector("#mode"),
+    sw = document.querySelector("#sw");
+
+    sw.addEventListener("click", () => {
 
     if (theme.getAttribute("href") == "css/day.css") {
-        document.querySelector("#sw").className = "far fa-sun";
+        sw.className = "far fa-sun";
         theme.setAttribute("href", "css/night.css");
     } else {
-        document.querySelector("#sw").className = "far fa-moon"
+        sw.className = "far fa-moon"
         theme.setAttribute("href", "css/day.css");
     }
-}
+});
 
-(() => {
+clock = () => {
     let date = new Date(),
-        hours = date.getHours(),
-        minutes = date.getMinutes();
-    if (hours < 10)
-        hours = "0" + hours;
-    if (minutes < 10)
-        minutes = "0" + minutes;
-
-    HouMin = `${hours}:${minutes}`;
-    document.getElementById("clok").innerHTML = HouMin;
-    setTimeout("clock()", 1000);
-})();
+        hours = date.getHours(),	       
+        minutes = date.getMinutes();	      
+    if (hours < 10)	    if (hours < 10)
+        hours = "0" + hours;	        
+    if (minutes < 10)	    if (minutes < 10)
+        minutes = "0" + minutes;	       
+    HouMin = `${hours}:${minutes}`;	    
+    document.getElementById("clok").innerHTML = HouMin;	  
+    Timer = setTimeout("clock()", 1000);	
+}
 
 window.requestAnimFrame = (() => {
     return window.requestAnimationFrame
@@ -38,9 +40,7 @@ window.requestAnimFrame = (() => {
                 s = (diffInMil / 1000);
             document.getElementById("sun").style.transform = `rotate(${(s * 6)}deg)`;
         }
-        // eslint-disable-next-line no-undef
         (loop = () => {
-            // eslint-disable-next-line no-undef
             requestAnimFrame(loop);
             draw();
         })();
