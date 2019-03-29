@@ -1,6 +1,6 @@
 let HouMin = 0,
     theme = document.querySelector("#mode");
-
+    
 let change = () => {
 
     if (theme.getAttribute("href") == "css/day.css") {
@@ -12,7 +12,7 @@ let change = () => {
     }
 }
 
-let clock = () => {
+(() => {
     let date = new Date(),
         hours = date.getHours(),
         minutes = date.getMinutes();
@@ -23,8 +23,8 @@ let clock = () => {
 
     HouMin = `${hours}:${minutes}`;
     document.getElementById("clok").innerHTML = HouMin;
-    Timer = setTimeout("clock()", 1000);
-}
+    setTimeout("clock()", 1000);
+})();
 
 window.requestAnimFrame = (() => {
     return window.requestAnimationFrame
@@ -38,7 +38,9 @@ window.requestAnimFrame = (() => {
                 s = (diffInMil / 1000);
             document.getElementById("sun").style.transform = `rotate(${(s * 6)}deg)`;
         }
+        // eslint-disable-next-line no-undef
         (loop = () => {
+            // eslint-disable-next-line no-undef
             requestAnimFrame(loop);
             draw();
         })();
