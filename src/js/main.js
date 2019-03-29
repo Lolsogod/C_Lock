@@ -1,10 +1,8 @@
-/* eslint-disable no-undef */
-
 let HouMin = 0,
     theme = document.querySelector("#mode"),
     sw = document.querySelector("#sw");
 
-    sw.addEventListener("click", () => {
+sw.addEventListener("click", () => {
 
     if (theme.getAttribute("href") == "css/day.css") {
         sw.className = "far fa-sun";
@@ -17,15 +15,17 @@ let HouMin = 0,
 
 clock = () => {
     let date = new Date(),
-        hours = date.getHours(),	       
-        minutes = date.getMinutes();	      
-    if (hours < 10)	    if (hours < 10)
-        hours = "0" + hours;	        
-    if (minutes < 10)	    if (minutes < 10)
-        minutes = "0" + minutes;	       
-    HouMin = `${hours}:${minutes}`;	    
-    document.getElementById("clok").innerHTML = HouMin;	  
-    Timer = setTimeout("clock()", 1000);	
+        hours = date.getHours(),
+        minutes = date.getMinutes();
+    if (hours < 10)
+        if (hours < 10)
+            hours = "0" + hours;
+    if (minutes < 10)
+        if (minutes < 10)
+            minutes = "0" + minutes;
+    HouMin = `${hours}:${minutes}`;
+    document.getElementById("clok").innerHTML = HouMin;
+    Timer = setTimeout("clock()", 1000);
 }
 
 window.requestAnimFrame = (() => {
