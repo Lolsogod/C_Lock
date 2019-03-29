@@ -1,8 +1,7 @@
 let HouMin = 0,
-    theme = document.querySelector("#mode"),
-    switcher = document.querySelector("#sw");
+    theme = document.querySelector("#mode");
 
-change = () => {
+let change = () => {
 
     if (theme.getAttribute("href") == "css/day.css") {
         document.querySelector("#sw").className = "far fa-sun";
@@ -13,7 +12,7 @@ change = () => {
     }
 }
 
-clock = () => {
+let clock = () => {
     let date = new Date(),
         hours = date.getHours(),
         minutes = date.getMinutes();
@@ -32,7 +31,7 @@ window.requestAnimFrame = (() => {
 })();
 
 (() => {
-    draw = () => {
+    let draw = () => {
             let now = new Date(),
                 then = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0),
                 diffInMil = (now.getTime() - then.getTime()),
